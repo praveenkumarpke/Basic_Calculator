@@ -21,3 +21,7 @@ html, body, #root, .App {
         width: 50vw;
     } */
 }
+
+.w-20 {
+    width: 22.5% !important;
+}

@@ -9,35 +9,35 @@ function Calc() {
                     <input className='w-100 p-4' type="text" name="" id="" />
                 </div>
                 <div className='m-2 mt-3'>
-                    <div className='w-100 mb-2'>
-                        <button type='button' className='w-25 btn btn-outline-secondary'>C</button>
-                        <button type='button' className='w-25 btn btn-outline-secondary'>+/-</button>
-                        <button type='button' className='w-25 btn btn-outline-secondary'>%</button>
-                        <button type='button' className='w-25 btn btn-outline-secondary'>/</button>
+                    <div className='mb-2 d-flex align-item-center justify-content-between'>
+                        <button type='button' className='w-20 btn btn-outline-secondary'>c</button>
+                        <button type='button' className='w-20 btn btn-outline-secondary'>±</button>
+                        <button type='button' className='w-20 btn btn-outline-secondary'>%</button>
+                        <button type='button' className='w-20 btn btn-outline-secondary'>／</button>
                     </div>
-                    <div className='w-100 mb-2'>
-                        <button type='button' className='w-25 btn btn-outline-secondary'>7</button>
-                        <button type='button' className='w-25 btn btn-outline-secondary'>8</button>
-                        <button type='button' className='w-25 btn btn-outline-secondary'>9</button>
-                        <button type='button' className='w-25 btn btn-outline-secondary'>x</button>
+                    <div className='mb-2 d-flex align-item-center justify-content-between'>
+                        <button type='button' className='w-20 btn btn-outline-secondary'>7</button>
+                        <button type='button' className='w-20 btn btn-outline-secondary'>8</button>
+                        <button type='button' className='w-20 btn btn-outline-secondary'>9</button>
+                        <button type='button' className='w-20 btn btn-outline-secondary'>x</button>
                     </div>
-                    <div className='w-100 mb-2'>
-                        <button type='button' className='w-25 btn btn-outline-secondary'>4</button>
-                        <button type='button' className='w-25 btn btn-outline-secondary'>5</button>
-                        <button type='button' className='w-25 btn btn-outline-secondary'>6</button>
-                        <button type='button' className='w-25 btn btn-outline-secondary'>-</button>
+                    <div className='mb-2 d-flex align-item-center justify-content-between'>
+                        <button type='button' className='w-20 btn btn-outline-secondary'>4</button>
+                        <button type='button' className='w-20 btn btn-outline-secondary'>5</button>
+                        <button type='button' className='w-20 btn btn-outline-secondary'>6</button>
+                        <button type='button' className='w-20 btn btn-outline-secondary'>-</button>
                     </div>
-                    <div className='w-100 mb-2'>
-                        <button type='button' className='w-25 btn btn-outline-secondary'>3</button>
-                        <button type='button' className='w-25 btn btn-outline-secondary'>2</button>
-                        <button type='button' className='w-25 btn btn-outline-secondary'>1</button>
-                        <button type='button' className='w-25 btn btn-outline-secondary'>+</button>
+                    <div className='mb-2 d-flex align-item-center justify-content-between'>
+                        <button type='button' className='w-20 btn btn-outline-secondary'>3</button>
+                        <button type='button' className='w-20 btn btn-outline-secondary'>2</button>
+                        <button type='button' className='w-20 btn btn-outline-secondary'>1</button>
+                        <button type='button' className='w-20 btn btn-outline-secondary'>+</button>
                     </div>
-                    <div className='w-100 mb-3'>
-                        <button type='button' className='w-25 btn btn-outline-secondary'>0</button>
-                        <button type='button' className='w-25 btn btn-outline-secondary'>.</button>
-                        <button type='button' className='w-25 btn btn-outline-secondary'>←</button>
-                        <button type='button' className='w-25 btn btn-outline-secondary'>=</button>
+                    <div className='mb-3 d-flex align-item-center justify-content-between'>
+                        <button type='button' className='w-20 btn btn-outline-secondary'>0</button>
+                        <button type='button' className='w-20 btn btn-outline-secondary'>∙</button>
+                        <button type='button' className='w-20 btn btn-outline-secondary'>←</button>
+                        <button type='button' className='w-20 btn btn-outline-secondary'>=</button>
                     </div>
                 </div>
             </div>
