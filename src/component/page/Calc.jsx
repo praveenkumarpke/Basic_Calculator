@@ -32,25 +32,25 @@ function Calc() {
                         {/* <button type='button' className='w btn btn-outline-dark'>±</button> */}
                         <button type='button' className='w btn btn-outline-dark' id='backspace' onClick={backspace}>c</button>
                         {/* <button type='button' className='w btn btn-outline-dark'>%</button> */}
-                        <button type='button' className='w btn btn-outline-dark'>/</button>
+                        <button type='button' className='w btn btn-outline-dark' name='/' onClick={click}>/</button>
                     </div>
                     <div className='mb-2 d-flex align-item-center justify-content-between'>
                         <button type='button' className='w btn btn-outline-dark' name='7' onClick={click}>7</button>
                         <button type='button' className='w btn btn-outline-dark' name='8' onClick={click}>8</button>
                         <button type='button' className='w btn btn-outline-dark' name='9' onClick={click}>9</button>
-                        <button type='button' className='w btn btn-outline-dark'>x</button>
+                        <button type='button' className='w btn btn-outline-dark' name='x' onClick={click}>x</button>
                     </div>
                     <div className='mb-2 d-flex align-item-center justify-content-between'>
                         <button type='button' className='w btn btn-outline-dark' name='4' onClick={click}>4</button>
                         <button type='button' className='w btn btn-outline-dark' name='5' onClick={click}>5</button>
                         <button type='button' className='w btn btn-outline-dark' name='6' onClick={click}>6</button>
-                        <button type='button' className='w btn btn-outline-dark'>-</button>
+                        <button type='button' className='w btn btn-outline-dark' name='-' onClick={click}>-</button>
                     </div>
                     <div className='mb-2 d-flex align-item-center justify-content-between'>
                         <button type='button' className='w btn btn-outline-dark' name='1' onClick={click}>1</button>
                         <button type='button' className='w btn btn-outline-dark' name='2' onClick={click}>2</button>
                         <button type='button' className='w btn btn-outline-dark' name='3' onClick={click}>3</button>
-                        <button type='button' className='w btn btn-outline-dark'>+</button>
+                        <button type='button' className='w btn btn-outline-dark' name='+' onClick={click}>+</button>
                     </div>
                     <div className='mb-3 d-flex align-item-center justify-content-between'>
                         <button type='button' className='w btn btn-outline-dark' name='0' onClick={click}>0</button>
