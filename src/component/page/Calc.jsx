@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../page/calc.css';
+import '../page/calc.scss';
 
 function Calc() {
     const [number, setNumber] = useState('');
@@ -28,10 +28,10 @@ function Calc() {
 
                 <div className='m-2 mt-3'>
                     <div className='mb-2 d-flex align-item-center justify-content-between'>
-                        <button type='button' className='w-48 btn btn-outline-dark' id='clear' onClick={clear}>clear</button>
-                        {/* <button type='button' className='w btn btn-outline-dark'>±</button> */}
-                        <button type='button' className='w btn btn-outline-dark' id='backspace' onClick={backspace}>c</button>
-                        {/* <button type='button' className='w btn btn-outline-dark'>%</button> */}
+                        <button type='button' className='w btn btn-outline-dark' id='clear' onClick={clear}>C</button>
+                        <button type='button' className='w btn btn-outline-dark'>±</button>
+                        {/* <button type='button' className='w btn btn-outline-dark' id='backspace' onClick={backspace}>c</button> */}
+                        <button type='button' className='w btn btn-outline-dark'>%</button>
                         <button type='button' className='w btn btn-outline-dark' name='/' onClick={click}>/</button>
                     </div>
                     <div className='mb-2 d-flex align-item-center justify-content-between'>
