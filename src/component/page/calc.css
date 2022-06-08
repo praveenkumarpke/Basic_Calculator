@@ -11,17 +11,49 @@ html, body, #root, .App {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 50vw;
+}
+
+@media only screen and (max-width : 375px) {
+    .center {
+        width: 75vw;
+    }
 }
 
 @media only screen and (max-width : 768px) {
-    /* .center {
-        width: -moz-fit-content;
-        width: fit-content;
-        width: 50vw;
-    } */
+    .center {
+        width: 75vw;
+    }
+}
+
+@media only screen and (max-width : 1280px) {
+    .center {
+        width: 75vw;
+    }
 }
 
 .w {
     width: 22.5%;
+}
+
+.i {
+    text-align: right;
+}
+
+.w-48 {
+    width: 48%;
+}
+
+#clear:active, #clear:hover {
+    /* background-color: red;
+    border: none; */
+}
+
+#backspace:active, #backspace:hover {
+    /* background-color: blue;
+    border: none; */
+}
+
+#equal:active, #equal:hover {
+    /* background-color: green;
+    border: none; */
 }
