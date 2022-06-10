@@ -66,6 +66,7 @@ function Calc() {
             default:
                 return;
         }
+         console.log("prestate : "+prestate+" || curstate : "+curstate+" || cal : "+cal);
         setInput("");
         setPrestate(cal);
         setCurstate("");
@@ -82,11 +83,14 @@ function Calc() {
     // };
 
     const percent = () => {
+       // console.log("prestate : "+ prestate);
+       // console.log("curstate : "+ curstate);
         prestate ? setCurstate(String((parseFloat(curstate)/100)* prestate))
         : setCurstate(String(parseFloat(curstate)/100));
     };
 
     const clear = () => {
+       // console.log("prestate : "+prestate+" curstate : "+curstate+" Input : "+input);
         setPrestate("");
         setCurstate("");
         setInput("0");
