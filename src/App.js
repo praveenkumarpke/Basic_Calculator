@@ -5,7 +5,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   return (
     <div className="App">
-      {/* <a className='d-flex justify-content-center ml mt-2' href="https://github.com/praveenkumarpke/Basic_Calculator" target="_blank"> <GitHubIcon /> </a> */}
+      <h1>Calculator</h1>
+      <a href="https://github.com/praveenkumarpke/Basic_Calculator" target="_blank"> <GitHubIcon /> </a>
       <Calc />
     </div>
   );

@@ -13,6 +13,7 @@ body,
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 50%;
 
     .i {
         text-align: right;
@@ -48,18 +49,40 @@ body,
 
 @media only screen and (max-width : 375px) {
     .center {
-        width: 75vw;
+        width: 75% !important;
     }
 }
 
-@media only screen and (max-width : 768px) {
-    .center {
-        width: 75vw;
-    }
-}
+// @media only screen and (min-width : 376px) and (max-width : 768px) {
+//     .center {
+//         width: 75% !important;
+//     }
+// }
 
-@media only screen and (max-width : 1280px) {
-    .center {
-        width: 75vw;
-    }
+// @media only screen and (min-width : 768px) and (max-width : 1280px) {
+//     .center {
+//         width: 50% !important;
+//     }
+// }
+
+// @media only screen and (max-width : 768px) {
+//     .center {
+//         width: 75vw !important;
+//     }
+// }
+
+// @media only screen and (max-width : 1280px) {
+//     .center {
+//         width: 50vw !important;
+//     }
+// }
+
+// @media only screen and (max-width : 1440px) {
+//     .center {
+//         width: 50vw !important;
+//     }
+// }
+
+.overflow {
+    overflow: hidden;
 }
