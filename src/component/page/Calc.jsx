@@ -50,24 +50,31 @@ function Calc() {
             setCurstate(curstate);
         };
 
-        let val
+        let val, output
         let cal
         switch (operator) {
             case "+":
                 val = String(parseFloat(prestate) + parseFloat(curstate));
-                cal = Math.round(val);
+                // console.log("val : " + val);
+                // console.log("Math.round(val) : " + Math.round(val));
+                output = Number(val).toFixed(2);
+                // console.log("output : " + output);
+                cal = output;
                 break;
             case "-":
                 val = String(parseFloat(prestate) - parseFloat(curstate));
-                cal = Math.round(val);
+                output = Number(val).toFixed(2);
+                cal = output;
                 break;
             case "x":
                 val = String(parseFloat(prestate) * parseFloat(curstate));
-                cal = Math.round(val);
+                output = Number(val).toFixed(2);
+                cal = output;
                 break;
             case "/":
                 val = String(parseFloat(prestate) / parseFloat(curstate));
-                cal = Math.round(val);
+                output = Number(val).toFixed(2);
+                cal = output;
                 break;
             default:
                 return;
