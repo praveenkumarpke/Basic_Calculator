@@ -50,31 +50,60 @@ function Calc() {
             setCurstate(curstate);
         };
 
-        let val, output
+        let val,output
         let cal
         switch (operator) {
             case "+":
                 val = String(parseFloat(prestate) + parseFloat(curstate));
                 // console.log("val : " + val);
-                // console.log("Math.round(val) : " + Math.round(val));
-                output = Number(val).toFixed(2);
-                // console.log("output : " + output);
-                cal = output;
+                if (val % 1 === 0) {
+                    cal = val;
+                    // console.log("integer -> calc : " + cal);
+                }
+                else {
+                    output = Number(val).toFixed(5);
+                    cal = output;
+                    // console.log("float -> calc : " + cal);
+                }
                 break;
             case "-":
                 val = String(parseFloat(prestate) - parseFloat(curstate));
-                output = Number(val).toFixed(2);
-                cal = output;
+                // console.log("val : " + val);
+                if (val % 1 === 0) {
+                    cal = val;
+                    // console.log("integer -> calc : " + cal);
+                }
+                else {
+                    output = Number(val).toFixed(5);
+                    cal = output;
+                    // console.log("float -> calc : " + cal);
+                }
                 break;
             case "x":
                 val = String(parseFloat(prestate) * parseFloat(curstate));
-                output = Number(val).toFixed(2);
-                cal = output;
+                // console.log("val : " + val);
+                if (val % 1 === 0) {
+                    cal = val;
+                    // console.log("integer -> calc : " + cal);
+                }
+                else {
+                    output = Number(val).toFixed(5);
+                    cal = output;
+                    // console.log("float -> calc : " + cal);
+                }
                 break;
             case "/":
                 val = String(parseFloat(prestate) / parseFloat(curstate));
-                output = Number(val).toFixed(2);
-                cal = output;
+                // console.log("val : " + val);
+                if (val % 1 === 0) {
+                    cal = val;
+                    // console.log("integer -> calc : " + cal);
+                }
+                else {
+                    output = Number(val).toFixed(5);
+                    cal = output;
+                    // console.log("float -> calc : " + cal);
+                }
                 break;
             default:
                 return;
