@@ -160,7 +160,7 @@ function Calc() {
                 <div className={outline}>
                     <div className={buttonbox}>
                         <button type='button' className={buttons} id='clear' onClick={clear}>AC</button>
-                        <button type='button' className={buttons} id='backspace' onClick={backspace}>c</button>
+                        <button type='button' className={buttons} id='backspace' onClick={backspace}>C</button>
                         <button type='button' className={buttons} onClick={percent}>%</button>
                         <button type='button' className={buttons} onClick={operatorType}>/</button>
                     </div>
