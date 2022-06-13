@@ -15,6 +15,15 @@ body,
     transform: translate(-50%, -50%);
     width: 375px;
 
+    .inputfeild {
+        overflow: hidden;
+        direction: rtl ;
+    }
+    
+    .height {
+        height: 90px;
+    }
+
     .i {
         text-align: right;
     }
@@ -79,7 +88,3 @@ body,
 //     }
 // }
 
-.overflow {
-    overflow: hidden;
-    direction: rtl ;
-}

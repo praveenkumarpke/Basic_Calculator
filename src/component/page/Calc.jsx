@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../page/calc.scss';
 import NumberFormat from 'react-number-format';
+import '../page/calc.scss';
 
 function Calc() {
     const [prestate, setPrestate] = useState('');
@@ -11,8 +11,8 @@ function Calc() {
     const [total, setTotal] = useState(false);
 
     const inputNum = (e) => {
-        console.log("prestate : " + prestate);
-        console.log("curstate : " + curstate);
+        // console.log("prestate : " + prestate);
+        // console.log("curstate : " + curstate);
         if (curstate.includes(".") && e.target.innerText === ".") return;
 
         if (total) {
@@ -23,16 +23,13 @@ function Calc() {
         setTotal(false);
     };
 
-
     useEffect(() => {
         setInput(curstate);
     }, [curstate]);
 
-
     useEffect(() => {
         setInput("0");
     }, []);
-
 
     const operatorType = (e) => {
         setTotal(false)
@@ -49,6 +46,8 @@ function Calc() {
     const equal = (e) => {
         if (e?.target.innerText === "=") {
             setTotal(true)
+            // console.log("curstate : "+curstate);
+            setCurstate(curstate);
         };
 
         let cal
@@ -68,21 +67,11 @@ function Calc() {
             default:
                 return;
         }
-        console.log("prestate : " + prestate + " || curstate : " + curstate + " || cal : " + cal);
+        // console.log("prestate : " + prestate + " || curstate : " + curstate + " || cal : " + cal);
         setInput("");
         setPrestate(cal);
         setCurstate("");
-
-
-        // if(prestate){
-
-        // }
     }
-
-
-    // const minusPlus = () => {
-
-    // };
 
     const percent = () => {
         // console.log("prestate : "+ prestate);
@@ -103,11 +92,12 @@ function Calc() {
         setPrestate("0");
     }
 
+    // bootstrap and userdefined styles
 
     const container = "w-100 h-auto d-flex align-item-center justify-content-center";
     const wrap = "shadow-lg p-3 bg-body rounded-3 center";
     const outline = "m-2 mt-3";
-    const inputfeild = "w-100 p-4 border border-2 border-dark rounded-3 h1 i overflow";
+    const inputfeild = "w-100 p-4 border border-2 border-dark rounded-3 h1 i inputfeild height";
     const buttonbox = "mb-2 d-flex align-item-center justify-content-between";
     const buttons = "w-22 btn btn-outline-dark";
     const button = "w-48 btn btn-outline-dark";
@@ -115,20 +105,7 @@ function Calc() {
     return (
         <div className={container}>
             <div className={wrap}>
-
                 <div className={outline}>
-
-                    {/* <input maxLength={10} className='w-100 p-4 border border-2 border-dark rounded-3 h1 i' type="text" name="" id="input"
-
-                        // {input !== "" || input === "0" ? (
-                        //     <NumberFormat value={input} displayType={"text"} thousandSeparator={true} />
-                        // ) : (
-                        //     <NumberFormat value={prestate} displayType={"text"} thousandSeparator={true} />
-                        // )
-                        // }
-
-                        value={input} /> */}
-
                     <div className={inputfeild}>
                         {input !== "" || input === "0" ? (
                             <NumberFormat value={input} displayType={"text"} thousandSeparator={true} />
@@ -142,33 +119,31 @@ function Calc() {
                 <div className={outline}>
                     <div className={buttonbox}>
                         <button type='button' className={buttons} id='clear' onClick={clear}>AC</button>
-                        {/* <button type='button' className={button} onClick={minusPlus}>±</button> */}
                         <button type='button' className={buttons} id='backspace' onClick={backspace}>c</button>
                         <button type='button' className={buttons} onClick={percent}>%</button>
-                        <button type='button' className={buttons} name='/' onClick={operatorType}>/</button>
+                        <button type='button' className={buttons} onClick={operatorType}>/</button>
                     </div>
                     <div className={buttonbox}>
-                        <button type='button' className={buttons} name='7' onClick={inputNum}>7</button>
-                        <button type='button' className={buttons} name='8' onClick={inputNum}>8</button>
-                        <button type='button' className={buttons} name='9' onClick={inputNum}>9</button>
-                        <button type='button' className={buttons} name='x' onClick={operatorType}>x</button>
+                        <button type='button' className={buttons} onClick={inputNum}>7</button>
+                        <button type='button' className={buttons} onClick={inputNum}>8</button>
+                        <button type='button' className={buttons} onClick={inputNum}>9</button>
+                        <button type='button' className={buttons} onClick={operatorType}>x</button>
                     </div>
                     <div className={buttonbox}>
-                        <button type='button' className={buttons} name='4' onClick={inputNum}>4</button>
-                        <button type='button' className={buttons} name='5' onClick={inputNum}>5</button>
-                        <button type='button' className={buttons} name='6' onClick={inputNum}>6</button>
-                        <button type='button' className={buttons} name='-' onClick={operatorType}>-</button>
+                        <button type='button' className={buttons} onClick={inputNum}>4</button>
+                        <button type='button' className={buttons} onClick={inputNum}>5</button>
+                        <button type='button' className={buttons} onClick={inputNum}>6</button>
+                        <button type='button' className={buttons} onClick={operatorType}>-</button>
                     </div>
                     <div className={buttonbox}>
-                        <button type='button' className={buttons} name='1' onClick={inputNum}>1</button>
-                        <button type='button' className={buttons} name='2' onClick={inputNum}>2</button>
-                        <button type='button' className={buttons} name='3' onClick={inputNum}>3</button>
-                        <button type='button' className={buttons} name='+' onClick={operatorType}>+</button>
+                        <button type='button' className={buttons} onClick={inputNum}>1</button>
+                        <button type='button' className={buttons} onClick={inputNum}>2</button>
+                        <button type='button' className={buttons} onClick={inputNum}>3</button>
+                        <button type='button' className={buttons} onClick={operatorType}>+</button>
                     </div>
                     <div className={buttonbox}>
-                        <button type='button' className={buttons} name='0' onClick={inputNum}>0</button>
-                        <button type='button' className={buttons} name='.' onClick={inputNum}>.</button>
-                        {/* <button type='button' className={buttons}>←</button> */}
+                        <button type='button' className={buttons} onClick={inputNum}>0</button>
+                        <button type='button' className={buttons} onClick={inputNum}>.</button>
                         <button type='button' className={button} id='equal' onClick={equal}>=</button>
                     </div>
                 </div>
