@@ -50,19 +50,24 @@ function Calc() {
             setCurstate(curstate);
         };
 
+        let val
         let cal
         switch (operator) {
             case "+":
-                cal = String(parseFloat(prestate) + parseFloat(curstate));
+                val = String(parseFloat(prestate) + parseFloat(curstate));
+                cal = Math.round(val);
                 break;
             case "-":
-                cal = String(parseFloat(prestate) - parseFloat(curstate));
+                val = String(parseFloat(prestate) - parseFloat(curstate));
+                cal = Math.round(val);
                 break;
             case "x":
-                cal = String(parseFloat(prestate) * parseFloat(curstate));
+                val = String(parseFloat(prestate) * parseFloat(curstate));
+                cal = Math.round(val);
                 break;
             case "/":
-                cal = String(parseFloat(prestate) / parseFloat(curstate));
+                val = String(parseFloat(prestate) / parseFloat(curstate));
+                cal = Math.round(val);
                 break;
             default:
                 return;
