@@ -11,6 +11,8 @@ function Calc() {
     const [total, setTotal] = useState(false);
 
     const inputNum = (e) => {
+        console.log("prestate : " + prestate);
+        console.log("curstate : " + curstate);
         if (curstate.includes(".") && e.target.innerText === ".") return;
 
         if (total) {
@@ -66,7 +68,7 @@ function Calc() {
             default:
                 return;
         }
-         console.log("prestate : "+prestate+" || curstate : "+curstate+" || cal : "+cal);
+        console.log("prestate : " + prestate + " || curstate : " + curstate + " || cal : " + cal);
         setInput("");
         setPrestate(cal);
         setCurstate("");
@@ -83,21 +85,23 @@ function Calc() {
     // };
 
     const percent = () => {
-       // console.log("prestate : "+ prestate);
-       // console.log("curstate : "+ curstate);
-        prestate ? setCurstate(String((parseFloat(curstate)/100)* prestate))
-        : setCurstate(String(parseFloat(curstate)/100));
+        // console.log("prestate : "+ prestate);
+        // console.log("curstate : "+ curstate);
+        prestate ? setCurstate(String((parseFloat(curstate) / 100) * prestate))
+            : setCurstate(String(parseFloat(curstate) / 100));
     };
 
     const clear = () => {
-       // console.log("prestate : "+prestate+" curstate : "+curstate+" Input : "+input);
+        // console.log("prestate : "+prestate+" curstate : "+curstate+" Input : "+input);
         setPrestate("");
         setCurstate("");
         setInput("0");
     };
 
-    // const backspace = () => {
-    // }
+    const backspace = () => {
+        setCurstate(curstate.slice(0, -1));
+        setPrestate("0");
+    }
 
 
     const container = "w-100 h-auto d-flex align-item-center justify-content-center";
@@ -105,7 +109,7 @@ function Calc() {
     const outline = "m-2 mt-3";
     const inputfeild = "w-100 p-4 border border-2 border-dark rounded-3 h1 i overflow";
     const buttonbox = "mb-2 d-flex align-item-center justify-content-between";
-    const buttons = "w btn btn-outline-dark";
+    const buttons = "w-22 btn btn-outline-dark";
     const button = "w-48 btn btn-outline-dark";
 
     return (
@@ -113,7 +117,7 @@ function Calc() {
             <div className={wrap}>
 
                 <div className={outline}>
-                    
+
                     {/* <input maxLength={10} className='w-100 p-4 border border-2 border-dark rounded-3 h1 i' type="text" name="" id="input"
 
                         // {input !== "" || input === "0" ? (
@@ -132,14 +136,14 @@ function Calc() {
                             <NumberFormat value={prestate} displayType={"text"} thousandSeparator={true} />
                         )
                         }
-                    </div> 
+                    </div>
                 </div>
 
                 <div className={outline}>
                     <div className={buttonbox}>
-                        <button type='button' className={button} id='clear' onClick={clear}>AC</button>
+                        <button type='button' className={buttons} id='clear' onClick={clear}>AC</button>
                         {/* <button type='button' className={button} onClick={minusPlus}>±</button> */}
-                        {/* <button type='button' className={button} id='backspace' onClick={backspace}>c</button> */}
+                        <button type='button' className={buttons} id='backspace' onClick={backspace}>c</button>
                         <button type='button' className={buttons} onClick={percent}>%</button>
                         <button type='button' className={buttons} name='/' onClick={operatorType}>/</button>
                     </div>
