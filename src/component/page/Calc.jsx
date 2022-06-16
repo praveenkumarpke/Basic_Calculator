@@ -69,9 +69,24 @@ function Calc() {
                     // console.log("integer -> calc : " + cal);
                 }
                 else {
-                    output = Number(val).toFixed(5);
-                    cal = output;
-                    // console.log("float -> calc : " + cal);
+                    output = val;
+                    const numStr = String(output)
+                    // console.log("numStr : " + numStr);
+
+                    if (numStr.includes('.')) {
+                        const datas = numStr.split('.')[1].length;
+                        // console.log("decimal digits -> datas : " + datas);
+                        result = datas;
+                        // console.log("result : "+result);
+                        if (result <= 9) {
+                            cal = numStr;
+                        }
+                        else {
+                            // console.log("val : "+val);
+                            cal = Number(val).toFixed(10);
+                            // console.log("cal : "+cal);
+                        }
+                    };
                 }
                 break;
             case "-":
@@ -82,9 +97,24 @@ function Calc() {
                     // console.log("integer -> calc : " + cal);
                 }
                 else {
-                    output = Number(val).toFixed(5);
-                    cal = output;
-                    // console.log("float -> calc : " + cal);
+                    output = val;
+                    const numStr = String(output)
+                    // console.log("numStr : " + numStr);
+
+                    if (numStr.includes('.')) {
+                        const datas = numStr.split('.')[1].length;
+                        // console.log("decimal digits -> datas : " + datas);
+                        result = datas;
+                        // console.log("result : "+result);
+                        if (result <= 9) {
+                            cal = numStr;
+                        }
+                        else {
+                            // console.log("val : "+val);
+                            cal = Number(val).toFixed(10);
+                            // console.log("cal : "+cal);
+                        }
+                    };
                 }
                 break;
             case "x":
