@@ -58,7 +58,7 @@ function Calc() {
             return this.toString().split(".")[1].length || 0;
         }
 
-        let val, output, result
+        let val, data, output, result
         let cal
         switch (operator) {
             case "+":
@@ -95,9 +95,24 @@ function Calc() {
                     // console.log("integer -> calc : " + cal);
                 }
                 else {
-                    output = Number(val).toFixed(5);
-                    cal = output;
-                    // console.log("float -> calc : " + cal);
+                    output = val;
+                    const numStr = String(output)
+                    // console.log("numStr : " + numStr);
+
+                    if (numStr.includes('.')) {
+                        const datas = numStr.split('.')[1].length;
+                        // console.log("decimal digits -> datas : " + datas);
+                        result = datas;
+                        // console.log("result : "+result);
+                        if (result <= 9) {
+                            cal = numStr;
+                        }
+                        else {
+                            // console.log("val : "+val);
+                            cal = Number(val).toFixed(10);
+                            // console.log("cal : "+cal);
+                        }
+                    };
                 }
                 break;
             case "/":
@@ -112,11 +127,11 @@ function Calc() {
                     // console.log("numStr : " + numStr);
 
                     if (numStr.includes('.')) {
-                        var data = numStr.split('.')[1].length;
+                        data = numStr.split('.')[1].length;
                         // console.log("decimal digits -> data : " + data);
                         result = data;
-                        if (result <= 5) {
-                            cal = numStr;
+                        if (result <= 9) {
+                            cal = numStr;  
                         }
                         else {
                             cal = Number(val).toFixed(10);
