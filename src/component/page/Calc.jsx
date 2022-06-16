@@ -115,6 +115,7 @@ function Calc() {
         setInput("");
         setPrestate(cal);
         setCurstate("");
+        setOperator("");
     }
 
     const percent = () => {
@@ -129,6 +130,7 @@ function Calc() {
         setPrestate("");
         setCurstate("");
         setInput("0");
+        setOperator("");
     };
 
     const backspace = () => {
