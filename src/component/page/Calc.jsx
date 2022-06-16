@@ -119,7 +119,7 @@ function Calc() {
     const percent = () => {
         // console.log("prestate : "+ prestate);
         // console.log("curstate : "+ curstate);
-        prestate ? setCurstate(String((parseFloat(curstate) / 100) * prestate))
+        prestate ? setCurstate(String((parseFloat(curstate) / 100) * prestate)*100)
             : setCurstate(String(parseFloat(curstate) / 100));
     };
 
