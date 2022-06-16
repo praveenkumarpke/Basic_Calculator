@@ -53,7 +53,12 @@ function Calc() {
             setCurstate(curstate);
         };
 
-        let val, output
+        Number.prototype.countDecimals = function () {
+            if (Math.floor(this.valueOf()) === this.valueOf()) return 0;
+            return this.toString().split(".")[1].length || 0;
+        }
+
+        let val, output, result
         let cal
         switch (operator) {
             case "+":
@@ -100,12 +105,23 @@ function Calc() {
                 // console.log("val : " + val);
                 if (val % 1 === 0) {
                     cal = val;
-                    // console.log("integer -> calc : " + cal);
                 }
                 else {
-                    output = Number(val).toFixed(5);
-                    cal = output;
-                    // console.log("float -> calc : " + cal);
+                    output = val;
+                    const numStr = String(output)
+                    // console.log("numStr : " + numStr);
+
+                    if (numStr.includes('.')) {
+                        var data = numStr.split('.')[1].length;
+                        // console.log("decimal digits -> data : " + data);
+                        result = data;
+                        if (result <= 5) {
+                            cal = numStr;
+                        }
+                        else {
+                            cal = Number(val).toFixed(10);
+                        }
+                    };
                 }
                 break;
             default:
