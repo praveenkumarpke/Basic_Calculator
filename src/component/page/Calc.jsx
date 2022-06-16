@@ -36,6 +36,7 @@ function Calc() {
     const operatorType = (e) => {
         setTotal(false)
         setOperator(e.target.innerText);
+        // console.log("operator :" + operator);
         if (curstate === "") return
         if (prestate !== "") {
             equal()
@@ -52,7 +53,7 @@ function Calc() {
             setCurstate(curstate);
         };
 
-        let val,output
+        let val, output
         let cal
         switch (operator) {
             case "+":
@@ -119,7 +120,7 @@ function Calc() {
     const percent = () => {
         // console.log("prestate : "+ prestate);
         // console.log("curstate : "+ curstate);
-        prestate ? setCurstate(String((parseFloat(curstate) / 100) * prestate)*100)
+        prestate ? setCurstate(String((parseFloat(curstate) / 100) * prestate) * 100)
             : setCurstate(String(parseFloat(curstate) / 100));
     };
 
@@ -140,7 +141,7 @@ function Calc() {
     const container = "w-100 h-auto d-flex align-item-center justify-content-center";
     const wrap = "shadow-lg p-3 bg-body rounded-3 center";
     const outline = "m-2 mt-3";
-    const inputfeild = "w-100 p-4 border border-2 border-dark rounded-3 h1 i inputfeild height";
+    const inputfeild = "w-100 p-4 border border-2 border-dark rounded-3 h1 i inputfeild height position-relative"; // position
     const buttonbox = "mb-2 d-flex align-item-center justify-content-between";
     const buttons = "w-22 btn btn-outline-dark";
     const button = "w-48 btn btn-outline-dark";
@@ -153,12 +154,17 @@ function Calc() {
                     <a href="https://github.com/praveenkumarpke/Basic_Calculator" target="_blank"> <GitHubIcon /> </a>
                     <div className={outline}>
                         <div className={inputfeild}>
-                            {input !== "" || input === "0" ? (
-                                <NumberFormat value={input} displayType={"text"} thousandSeparator={true} />
-                            ) : (
-                                <NumberFormat value={prestate} displayType={"text"} thousandSeparator={true} />
-                            )
-                            }
+                            <div className='position-absolute fontSize'>
+                                {operator}
+                            </div>
+                            <div className=''>
+                                {input !== "" || input === "0" ? (
+                                    <NumberFormat value={input} displayType={"text"} thousandSeparator={true} />
+                                ) : (
+                                    <NumberFormat value={prestate} displayType={"text"} thousandSeparator={true} />
+                                )
+                                }
+                            </div>
                         </div>
                     </div>
 
@@ -185,7 +191,7 @@ function Calc() {
                             <button type='button' className={buttons} onClick={inputNum}>1</button>
                             <button type='button' className={buttons} onClick={inputNum}>2</button>
                             <button type='button' className={buttons} onClick={inputNum}>3</button>
-                            <button type='button' className={buttons} onClick={operatorType}>+</button>
+                            <button type='button' className={buttons} name="+" onClick={operatorType}>+</button>
                         </div>
                         <div className={buttonbox}>
                             <button type='button' className={buttons} onClick={inputNum}>0</button>
