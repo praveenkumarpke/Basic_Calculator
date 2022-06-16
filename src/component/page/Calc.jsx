@@ -15,11 +15,11 @@ function Calc() {
     const inputNum = (e) => {
         // console.log("prestate : " + prestate);
         // console.log("curstate : " + curstate);
-        if (curstate.includes(".") && e.target.innerText === ".") return;
+        // if (curstate.includes(".") && e.target.innerText === ".") return;
 
-        if (total) {
-            setPrestate("");
-        }
+        // if (total) {
+        //     setPrestate("");
+        // }
 
         curstate ? setCurstate((pre) => pre + e.target.innerText) : setCurstate(e.target.innerText);
         setTotal(false);
@@ -161,7 +161,7 @@ function Calc() {
                         // console.log("decimal digits -> data : " + data);
                         result = data;
                         if (result <= 9) {
-                            cal = numStr;  
+                            cal = numStr;
                         }
                         else {
                             cal = Number(val).toFixed(10);
@@ -169,6 +169,17 @@ function Calc() {
                     };
                 }
                 break;
+                // 
+            case "%":
+                console.log("prestate: " + prestate + "|| curstate : " + curstate);
+                if (prestate) {
+                  cal = prestate / 100;
+                }
+                else {
+                  console.log("error");
+                }
+                break;
+                // 
             default:
                 return;
         }
@@ -236,7 +247,7 @@ function Calc() {
                         <div className={buttonbox}>
                             <button type='button' className={buttons} id='clear' onClick={clear}>AC</button>
                             <button type='button' className={buttons} id='backspace' onClick={backspace}>C</button>
-                            <button type='button' className={buttons} onClick={percent}>%</button>
+                            <button type='button' className={buttons} onClick={operatorType}>%</button>
                             <button type='button' className={buttons} onClick={operatorType}>/</button>
                         </div>
                         <div className={buttonbox}>
