@@ -136,6 +136,7 @@ function Calc() {
     const backspace = () => {
         setCurstate(curstate.slice(0, -1));
         setPrestate("0");
+        setOperator("");
     }
 
     // bootstrap and userdefined styles
@@ -193,7 +194,7 @@ function Calc() {
                             <button type='button' className={buttons} onClick={inputNum}>1</button>
                             <button type='button' className={buttons} onClick={inputNum}>2</button>
                             <button type='button' className={buttons} onClick={inputNum}>3</button>
-                            <button type='button' className={buttons} name="+" onClick={operatorType}>+</button>
+                            <button type='button' className={buttons} onClick={operatorType}>+</button>
                         </div>
                         <div className={buttonbox}>
                             <button type='button' className={buttons} onClick={inputNum}>0</button>
