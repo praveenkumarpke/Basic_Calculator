@@ -208,9 +208,10 @@ function Calc() {
     };
 
     const backspace = () => {
+        // console.log("curstate :"+curstate + " || prestate :"+prestate + " || operator :"+operator);
         setCurstate(curstate.slice(0, -1));
-        setPrestate("0");
-        // setOperator("");
+        setPrestate("");
+        setOperator("");
     }
 
     // bootstrap and userdefined styles
