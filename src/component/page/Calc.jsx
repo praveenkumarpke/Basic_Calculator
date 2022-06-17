@@ -169,9 +169,10 @@ function Calc() {
                     };
                 }
                 break;
-                // 
+
+                // [WIP] 
             case "%":
-                console.log("prestate: " + prestate + "|| curstate : " + curstate);
+                // console.log("prestate: " + prestate + "|| curstate : " + curstate);
                 if (prestate) {
                   cal = prestate / 100;
                 }
@@ -180,6 +181,7 @@ function Calc() {
                 }
                 break;
                 // 
+                
             default:
                 return;
         }
