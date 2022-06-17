@@ -17,9 +17,9 @@ function Calc() {
         // console.log("curstate : " + curstate);
         // if (curstate.includes(".") && e.target.innerText === ".") return;
 
-        // if (total) {
-        //     setPrestate("");
-        // }
+        if (total) {
+            setPrestate("");
+        }
 
         curstate ? setCurstate((pre) => pre + e.target.innerText) : setCurstate(e.target.innerText);
         setTotal(false);
@@ -181,7 +181,7 @@ function Calc() {
                 }
                 break;
                 // 
-                
+
             default:
                 return;
         }
@@ -210,7 +210,7 @@ function Calc() {
     const backspace = () => {
         setCurstate(curstate.slice(0, -1));
         setPrestate("0");
-        setOperator("");
+        // setOperator("");
     }
 
     // bootstrap and userdefined styles
